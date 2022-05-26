@@ -1,0 +1,29 @@
+.logoSearch{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.logo{
+    padding: 10px;
+}
+
+.navContainer{
+    width:35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.links{
+    padding:0 7px;
+    color:white; 
+    text-decoration:none;
+}
+
+.secondLine{
+    font-weight: bold;
+}
