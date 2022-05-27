@@ -5,12 +5,14 @@ import Home from "./Home";
 
 function App() {
   return (
+    <>
     <Router>
+    <Header/>
         <Routes>
-        <Route path='/' element={<Header  />} />
         <Route path='/' element={<Home/>} />
         </Routes>
     </Router>
+    </>
   );
 }
 

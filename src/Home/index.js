@@ -1,9 +1,10 @@
+import styles from "./style.module.css";
 
 
 function Home() {
     return (
-      <div className="home">
-        Hello World, again!!
+      <div className={styles.homeWrapper}>
+        hi, from Home
       </div>
     );
   }

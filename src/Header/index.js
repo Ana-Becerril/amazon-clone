@@ -7,13 +7,12 @@ import {
   CssBaseline,
   Typography,
   InputAdornment,
-  Box,
   Button,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { CenterFocusStrong } from "@material-ui/icons";
+import Home from '../Home/index'
 
 function Header() {
   return (
@@ -25,7 +24,9 @@ function Header() {
       <Toolbar>
         <Typography ></Typography>
         <div className={styles.logoSearch}>
-          <div className={styles.logo}>Logo</div>
+        <Link to="/" component={Home}>
+        <div className={styles.logo}>Logo</div>
+          </Link>
           <TextField
             variant="outlined"
             size="small"
