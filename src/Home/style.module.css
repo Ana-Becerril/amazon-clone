@@ -6,16 +6,22 @@
 
 .homeBanner{
     background-image: url("../assets/images/home.jpg");
-    min-height: 500px;
+    min-height: 550px;
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
 .productsContainer{
     width: 100%;
-    position: absolute;
     display: flex;
-    top:50%
+    margin-top:250px;
+    flex-wrap: wrap;
+
 }
 

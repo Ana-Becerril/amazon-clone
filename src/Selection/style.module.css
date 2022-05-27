@@ -1,0 +1,48 @@
+.selectionWrapper{
+    width:100%;
+    height: 500px;
+    position: absolute;
+    top:40%;
+    display: flex;
+    margin-bottom: 400px;
+}
+
+
+.itemSelection, .loginSelection{
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    width: 23%;
+    margin-left:23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.loginSelection{
+    justify-content: center;
+    position: initial;
+}
+
+.imgContainer{
+    padding: 10px;
+    width: 100%;
+    height: 80%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selectionLink{
+    padding-top:50px;
+    position: absolute;
+    bottom: 5%;
+    left: 7%;
+    text-decoration: none;
+    color: blue;
+}
