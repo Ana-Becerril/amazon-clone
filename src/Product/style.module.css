@@ -1,13 +1,23 @@
 
 
-.productWrapper{
+.productWrapper {
     background-color: rgb(255, 255, 255);
-    height: 450px;
+    min-height: 500px;
     width: 23%;
     margin-left:23px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+}
+
+.imgContainer{
+    padding: 20px;
+    height: 50%;
+}
+
+.productImage {
+    object-fit: cover;
+    background-color: blue;
 }
 
