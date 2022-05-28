@@ -1,14 +1,13 @@
-
-
 .productWrapper {
     background-color: rgb(255, 255, 255);
-    min-height: 500px;
+    height: 480px;
     width: 23%;
     margin-left:23px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+    padding: 20px;
 }
 
 .imgContainer{
@@ -18,6 +17,28 @@
 
 .productImage {
     object-fit: cover;
-    background-color: blue;
 }
+
+.title, .price, .rating{
+    align-self: flex-start;
+} 
+
+.title{
+    margin-bottom: 10px;
+    height: auto;
+    width: 90%;
+    padding: 0;
+    
+
+}
+
+.price{
+    font-weight: bold;
+}
+
+.rating{
+    font-size: 15px;
+}
+
+
 
