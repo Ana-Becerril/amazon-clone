@@ -1,11 +1,11 @@
-.homeContainer{
+.homeContainer {
     width: 100%;
     height: auto;
     margin: 0;
     background-color: #eaeded;
 }
 
-.homeBanner{
+.homeBanner {
     background-image: url("../assets/images/home.jpg");
     min-height: 550px;
     background-size: cover;
@@ -13,16 +13,15 @@
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
 }
 
-.productsContainer{
+.productsContainer {
     width: 100%;
     display: flex;
-    margin-top:200px;
+    margin-top:250px;
     flex-wrap: wrap;
-
 }
 
