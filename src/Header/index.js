@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       style={{ background: "#131921", display: "flex" }}
     >
       <CssBaseline />
