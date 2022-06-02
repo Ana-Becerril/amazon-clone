@@ -13,7 +13,7 @@ function reducer(state, action) {
                 user: action.user
             }
         case "ADD_TO_BASKET":
-            return {
+            return {    
                 ...state, 
                 basket: [...state.basket, action.item]
             };

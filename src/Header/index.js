@@ -13,8 +13,11 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Home from '../Home/index'
+import { useStateValue } from "../StateProvider";
 
 function Header() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <AppBar
       position="static"
@@ -74,7 +77,8 @@ function Header() {
             <p className={styles.secondLine}>Prime</p></Link>
           <Link to="/shopping-basket" className={styles.links}>
           <InputAdornment>
-                    <ShoppingCartIcon fontSize="large" style={{marginTop:'10px', alignSelf:'center '}}/> 0
+                    <ShoppingCartIcon fontSize="large" style={{marginTop:'10px', alignSelf:'center '}}/> 
+                    <span>{basket?.length}</span>
                 </InputAdornment>
           </Link>
         </div>

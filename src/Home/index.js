@@ -15,6 +15,7 @@ function Home() {
         <div className={styles.productsContainer}>
           {listItems.map((product) => (
             <Product
+              id = {product.id}
               title={product.title}
               price={product.price}
               raiting={product.rating}
