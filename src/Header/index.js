@@ -37,7 +37,7 @@ function Header() {
             variant="outlined"
             size="small"
             style={{
-              width: "80%",
+              width: "100%",
               margin: "10px",
               background: "#fff",
               borderRadius: "5px",

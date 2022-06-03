@@ -8,11 +8,12 @@ const Login = () => {
   const history = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const signIn = (event) => {
     event.preventDefault()
     auth.signInWithEmailAndPassword(email, password)
         .then( auth => {
-            history.push("/")
+            history("/")
         })
         .catch(err => {
             alert(err.message)
@@ -22,7 +23,7 @@ const register = (event) => {
     event.preventDefault()
     auth.createUserWithEmailAndPassword(email, password)
         .then(auth => {
-            history.push("/")
+            history("/")
         })
         .catch(err => {
             alert(err.message)
@@ -39,10 +40,11 @@ const register = (event) => {
         <form>
           <h1 className={styles.titleLogin}> Sign-in </h1>
           <label for="email">E-mail</label>
-          <input id="email"></input>
+          <input value={email} onChange={event => setEmail(event.target.value)} type="email" id="email"></input>
           <label for="password"> Password </label>
-          <input id="password"></input>
+          <input value={password} onChange={event => setPassword(event.target.value)} type="password" id="password"></input>
           <Button
+            onClick={signIn} 
             size="small"
             style={{
               background: "#f3a847",
@@ -57,6 +59,7 @@ const register = (event) => {
           </Button>
           <p className={styles.advice}>By continuing, you agree to the Amazon's Fake Clone Conditions of Use and Privacy Notice.</p>
           <Button
+            onClick={register}
             size="small"
             style={{
               background: "#EAEDEe",
