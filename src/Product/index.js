@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 
 function Product({ id, title, price, image }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
   const addToBasket = () => {
     dispatch({

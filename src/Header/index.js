@@ -9,15 +9,29 @@ import {
   InputAdornment,
   Button,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Login from '../Login/index'
 import { useStateValue } from "../StateProvider";
-
+import {auth} from "../firebase";
 
 function Header() {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+  const history = useNavigate() 
+
+  const signOutUser = (event) => {
+    event.preventDefault();
+    auth
+      .signOut()
+      .then((auth) => {
+        history("/login");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
 
   return (
     <AppBar
@@ -64,10 +78,10 @@ function Header() {
           />
         </div>
         <div className={styles.navContainer}>
-          <Link to="/login" component={Login} className={styles.links}>
-            <small> Hello</small> 
+          <Link to={!user && "/login"}  component={Login} className={styles.links}>
+            <small> Hello, {user?.email}</small> 
             <br/> 
-            <p className={styles.secondLine}>Sign Out</p>
+            <p  onClick={signOutUser} className={styles.secondLine}>{user ? "Sign Out" : "Sign In"}</p>
           </Link>
           <Link to="/return-orders" className={styles.links}>
             <small>Returns</small>
