@@ -15,6 +15,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Login from "../Login/index";
 import { useStateValue } from "../StateProvider";
 import { auth } from "../firebase";
+import Checkout from '../Checkout/index';
 
 function Header() {
   const [{ basket, user }] = useStateValue();
@@ -99,7 +100,10 @@ function Header() {
             <br />
             <p className={styles.secondLine}>Prime</p>
           </Link>
-          <Link to="/shopping-basket" className={styles.links}>
+          <Link 
+          to="/checkout" 
+          component={Checkout} 
+          className={styles.links}>
             <InputAdornment>
               <ShoppingCartIcon
                 fontSize="large"

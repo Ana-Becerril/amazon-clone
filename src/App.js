@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
-import Login from './Login';
+import Login from './Login'; 
 import { useStateValue } from './StateProvider';
 import {auth} from './firebase';
+import Checkout from './Checkout'
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -37,6 +38,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
+        <Route path='/checkout' element={<Checkout/>} />
         </Routes>
     </Router>
     </>
