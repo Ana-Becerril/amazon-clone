@@ -5,7 +5,8 @@ import styles from "./style.module.css";
 import { useStateValue } from "../StateProvider";
 
 function Checkout() {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+
 
   return (
     <div className={styles.wrapper}>
@@ -15,10 +16,12 @@ function Checkout() {
           src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_45M_v2_1x._CB432458380_.jpg"
           alt="ad"
         />
+        {user? <h2 className={styles.checkoutTitles}>Hello, {user?.email}</h2>:null }
+       
          {basket?.length === 0 ? (
                     <div>
-                        <h1>Your shopping cart is empty</h1>
-                        <h2>
+                        <h1 className={styles.checkoutTitles}>Your shopping cart is empty</h1>
+                        <h2 className={styles.checkoutTitles}>
                             You have no items in your cart. To buy one or add item to basket click the add to basket button
                         </h2>
                     </div>

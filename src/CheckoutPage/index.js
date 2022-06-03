@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./style.module.css";
 import { Button } from "@material-ui/core";
 
-export default function CheckoutPage({ id, title, image, price }) {
+export default function CheckoutPage({ title, image, price }) {
   return (
       <div className={styles.productWrapper}>
         <div className={styles.imgContainer}>

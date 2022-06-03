@@ -1,7 +1,7 @@
 .productWrapper {
     height: 250px;
     width: 100%;
-    margin-left:23px;
+    margin-left:10px;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
@@ -10,12 +10,15 @@
 .infoContainer{
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    margin-top: 25px;
 }
 
 .imgContainer{
     padding: 20px;
     height: 100%;
-    width: 250px;
+    max-width: 200px;
+    margin-right: 15px;
 
 }
 
