@@ -1,13 +1,22 @@
 .logoSearch{
     width: 65%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     align-content: center;
+  
 }
 
 .logo{
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+}
+
+.headerLogo{
+    margin-top: 20px;
+    width: 100px;
 }
 
 .navContainer{

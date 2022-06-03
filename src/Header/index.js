@@ -12,8 +12,9 @@ import {
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Home from '../Home/index'
+import Login from '../Login/index'
 import { useStateValue } from "../StateProvider";
+
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
@@ -27,9 +28,11 @@ function Header() {
       <Toolbar>
         <Typography ></Typography>
         <div className={styles.logoSearch}>
-        <Link to="/" component={Home}>
-        <div className={styles.logo}>Logo</div>
+          <div className={styles.logo}>
+          <Link to="/" >
+                <img className={styles.headerLogo} src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo"/>
           </Link>
+          </div>
           <TextField
             variant="outlined"
             size="small"
@@ -61,8 +64,8 @@ function Header() {
           />
         </div>
         <div className={styles.navContainer}>
-          <Link to="/login" className={styles.links}>
-            <small> Hello, someone@some.com</small> 
+          <Link to="/login" component={Login} className={styles.links}>
+            <small> Hello</small> 
             <br/> 
             <p className={styles.secondLine}>Sign Out</p>
           </Link>
