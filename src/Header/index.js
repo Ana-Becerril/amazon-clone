@@ -12,13 +12,13 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Login from '../Login/index'
+import Login from "../Login/index";
 import { useStateValue } from "../StateProvider";
-import {auth} from "../firebase";
+import { auth } from "../firebase";
 
 function Header() {
   const [{ basket, user }] = useStateValue();
-  const history = useNavigate() 
+  const history = useNavigate();
 
   const signOutUser = (event) => {
     event.preventDefault();
@@ -32,20 +32,20 @@ function Header() {
       });
   };
 
-
   return (
-    <AppBar
-      position="fixed"
-      style={{ background: "#131921", display: "flex" }}
-    >
+    <AppBar position="fixed" style={{ background: "#131921", display: "flex" }}>
       <CssBaseline />
       <Toolbar>
-        <Typography ></Typography>
+        <Typography></Typography>
         <div className={styles.logoSearch}>
           <div className={styles.logo}>
-          <Link to="/" >
-                <img className={styles.headerLogo} src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo"/>
-          </Link>
+            <Link to="/">
+              <img
+                className={styles.headerLogo}
+                src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                alt="amazon logo"
+              />
+            </Link>
           </div>
           <TextField
             variant="outlined"
@@ -78,25 +78,35 @@ function Header() {
           />
         </div>
         <div className={styles.navContainer}>
-          <Link to={!user && "/login"}  component={Login} className={styles.links}>
-            <small> Hello, {user?.email}</small> 
-            <br/> 
-            <p  onClick={signOutUser} className={styles.secondLine}>{user ? "Sign Out" : "Sign In"}</p>
+          <Link
+            to={!user && "/login"}
+            component={Login}
+            className={styles.links}
+          >
+            <small> Hello, {user?.email}</small>
+            <br />
+            <p onClick={signOutUser} className={styles.secondLine}>
+              {user ? "Sign Out" : "Sign In"}
+            </p>
           </Link>
           <Link to="/return-orders" className={styles.links}>
             <small>Returns</small>
-            <br/>
+            <br />
             <p className={styles.secondLine}>and Orders</p>
           </Link>
           <Link to="/amazon-prime" className={styles.links}>
-            <small>Your</small> 
-            <br/>
-            <p className={styles.secondLine}>Prime</p></Link>
+            <small>Your</small>
+            <br />
+            <p className={styles.secondLine}>Prime</p>
+          </Link>
           <Link to="/shopping-basket" className={styles.links}>
-          <InputAdornment>
-                    <ShoppingCartIcon fontSize="large" style={{marginTop:'10px', alignSelf:'center '}}/> 
-                    <span>{basket?.length}</span>
-                </InputAdornment>
+            <InputAdornment>
+              <ShoppingCartIcon
+                fontSize="large"
+                style={{ marginTop: "10px", alignSelf: "center " }}
+              />
+              <span>{basket?.length}</span>
+            </InputAdornment>
           </Link>
         </div>
       </Toolbar>

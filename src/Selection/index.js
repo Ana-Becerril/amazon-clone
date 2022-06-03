@@ -4,8 +4,28 @@ import { Button } from "@material-ui/core";
 import itemOne from "../assets/images/item1.jpg";
 import itemTwo from "../assets/images/item2.jpg";
 import itemThree from "../assets/images/item3.jpg";
+import { useStateValue } from "../StateProvider";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Selection = () => {
+
+  const [{ user }] = useStateValue();
+  const history = useNavigate();
+
+  const signOutUser = (event) => {
+    event.preventDefault();
+    auth
+      .signOut()
+      .then((auth) => {
+        history("/login");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
+
   return (
     <div className={styles.selectionWrapper}>
       <div className={styles.itemSelection}>
@@ -30,17 +50,19 @@ const Selection = () => {
         <a href='https://www.amazon.com/s?i=specialty-aps&bbn=16225006011&rh=n%3A%2116225006011%2Cn%3A3777891&pd_rd_r=9e7066d6-dc61-4fbc-93af-fbfbdcbe0703&pd_rd_w=9Ffkv&pd_rd_wg=FxgJM&pf_rd_p=619b2b85-1519-44b0-b10f-193bd022e08c&pf_rd_r=8NB7RHX43HYFN7V0Q3BP&ref=pd_gw_unk' className={styles.selectionLink}>Shop Now</a>
       </div>
       <div className={styles.loginSelection}>
-        <h1>Sign in for the best experience</h1>
+        <h1> {user ? 'Are you ready for the best experience?' : "Sign in for the best experience"} </h1>
+        {user ? null : 
         <Button
+          onClick={signOutUser}
           style={{
             background: "#f3a847",
             padding: "5px",
             borderRadius: "4px",
           }}
         >
-          {" "}
-          Sign In Securely{" "}
-        </Button>
+          {user ? "Sign Out" : "Sign In"}
+        </Button>}
+        
       </div>
     </div>
   );
