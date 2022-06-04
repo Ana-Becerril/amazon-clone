@@ -8,6 +8,7 @@ import {auth} from './firebase';
 import Checkout from './Checkout'
 
 function App() {
+  // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
       // Any clean up operation goes in here
       unsubscribe();
     }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <>
