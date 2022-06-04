@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 
 function Product({ id, title, price, image }) {
+    // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   const addToBasket = () => {
