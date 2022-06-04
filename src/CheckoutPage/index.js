@@ -1,8 +1,18 @@
 import React from "react";
 import styles from "./style.module.css";
 import { Button } from "@material-ui/core";
+import { useStateValue } from "../StateProvider";
 
-export default function CheckoutPage({ title, image, price }) {
+ function CheckoutPage({ id, title, image, price }) {
+  const [{}, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    dispatch({
+        type: "REMOVE_FROM_BASKET",
+        id
+    })
+}
+
   return (
       <div className={styles.productWrapper}>
         <div className={styles.imgContainer}>
@@ -13,6 +23,7 @@ export default function CheckoutPage({ title, image, price }) {
         <p className={styles.price}>${price}</p>
         <div className={styles.rating}>⭐⭐⭐⭐⭐</div>
         <Button
+          onClick={removeFromBasket}
           size="small"
           style={{
             background: "#f3a847",
@@ -29,3 +40,5 @@ export default function CheckoutPage({ title, image, price }) {
       </div>
   );
 }
+
+export default CheckoutPage
