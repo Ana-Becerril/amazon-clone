@@ -4,9 +4,7 @@
     position: absolute;
     top:40%;
     display: flex;
-    margin-bottom: 300px;
 }
-
     
 .itemSelection, .loginSelection{
     background-color: rgb(255, 255, 255);
@@ -46,3 +44,9 @@ img{
     text-decoration: none;
     color: blue;
 }
+
+
+
+
+
+

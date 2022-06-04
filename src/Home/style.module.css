@@ -21,7 +21,13 @@
 .productsContainer {
     width: 100%;
     display: flex;
-    margin-top:350px;
+    margin-top:270px;
     flex-wrap: wrap;
 }
 
+
+@media (min-width: 1500px){
+    .productsContainer {
+        margin-top:350px;
+    }
+}
